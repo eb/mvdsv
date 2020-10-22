@@ -9,14 +9,14 @@
 #
 
 MAINDIR = ../../..
-SV_DIR = $(MAINDIR)/source
+SV_DIR = $(MAINDIR)/src
 QWDTOOLS_DIR = $(MAINDIR)/tools/qwdtools/source
 
 # to compile qwdtools as 32bit on 64bit target platform use next:
 # for gcc its like: make qwdtools FORCE32BITFLAGS=-m32
 # configure script add FORCE32BITFLAGS=-m32
 
-BASE_CFLAGS=-Wall -pipe -pthread -funsigned-char -DUSE_PR2 -D$(BYTE_ORDER)Q__ $(FORCE32BITFLAGS)
+BASE_CFLAGS=-Wall -pipe -pthread -funsigned-char -DUSE_PR2 -DSERVERONLY -D$(BYTE_ORDER)Q__ $(FORCE32BITFLAGS)
 WITH_OPTIMIZED_CFLAGS=YES
 
 USE_ASM=-Did386
